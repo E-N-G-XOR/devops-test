@@ -23,7 +23,7 @@ terraform folder:
     terraform init -backend-config 'key=<your username>/terraform.tfstate'
     terraform plan -var 'candidate=<your username>'
 
-Replacing <your username> with the amazon username you were supplied.
+Replacing <your username> with the AWS username you were supplied.
 
 Task 1
 ------
