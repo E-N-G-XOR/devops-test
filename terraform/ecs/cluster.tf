@@ -25,10 +25,6 @@ resource "aws_iam_instance_profile" "ecs_host" {
 }
 
 resource "aws_launch_template" "ecs_host" {
-  lifecycle {
-    create_before_destroy = true
-  }
-
   name_prefix   = "${local.prefix}-launch-configuration"
   image_id      = "${data.aws_ssm_parameter.ami.value}"
   instance_type = "${var.instance_type}"
@@ -39,6 +35,7 @@ resource "aws_launch_template" "ecs_host" {
 
   network_interfaces {
     associate_public_ip_address = false
+    delete_on_termination       = true
 
     security_groups = [
       "${aws_security_group.role_ecs_host.id}",
