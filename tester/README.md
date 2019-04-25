@@ -1,6 +1,9 @@
 README for testers
 ==================
 
+A little setup script has been provided to bootstrap the lw-interview account
+for a new candidate.
+
 To set up a new candidate do the following:
 
 1. Ensure you have aws-vault installed and have added the keys for the
@@ -36,10 +39,10 @@ repo using CodeCommit in the lw-interview account.
 
 If you need to run their terraform be sure to use their name as the config key:
 
-    terraform init -backend-config 'key=<candidate username>/terraform.tfstate'
-    terraform plan -var 'candidate=<candidate username>'
+    aws-vault exec --no-session lw-interview -- terraform init -backend-config 'key=<candidate username>/terraform.tfstate'
+    aws-vault exec --no-session lw-interview -- terraform plan -var 'candidate=<candidate username>'
 
 When you are done, you can destroy all their resources using:
 
-    terraform init -backend-config 'key=<candidate username>/terraform.tfstate'
-    terraform destroy -var 'candidate=<candidate username>'
+    aws-vault exec --no-session lw-interview -- terraform init -backend-config 'key=<candidate username>/terraform.tfstate'
+    aws-vault exec --no-session lw-interview -- terraform destroy -var 'candidate=<candidate username>'
