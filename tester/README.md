@@ -8,9 +8,10 @@ To set up a new candidate do the following:
 
     aws-vault add lw-interview
 
-2. Run the terraform for the candidate and setup the repo supplying the name of
-   the candidate. Please keep it short and don't reveal the candidates full
-   name. Recommend first name and initial of surname eg. jamiel
+2. Run the terraform for the candidate and setup their CodeCommit repo by
+   supplying the name of the candidate to the setup script. Please keep it short
+   and don't reveal the candidates full name. Recommend first name and initial
+   of surname eg. jamiel
 
     ./setup.sh <candidate name>
 
