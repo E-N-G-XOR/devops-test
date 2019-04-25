@@ -4,6 +4,11 @@ README for testers
 A little setup script has been provided to bootstrap the lw-interview account
 for a new candidate.
 
+Pre-requisites that you need installed on your machine:
+
+aws-vault
+gpg - For mac you can install GPG Suite from https://gpgtools.org/
+
 To set up a new candidate do the following:
 
 1. Ensure you have aws-vault installed and have added the keys for the
