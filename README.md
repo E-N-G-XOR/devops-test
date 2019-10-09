@@ -5,8 +5,8 @@ Overview
 ---------
 
 This repository consists of some terraform to create a vpc and an ECS cluster
-in our test account. It also contains a Dockerfile which runs a webserver but is
-not currently deployed to our cluster.
+for a test account. It also contains a Dockerfile which runs a webserver but is
+not currently deployed to a cluster.
 
 We will be looking for you to create a branch of this repository, and then
 complete the tasks outlined below. The aim would be to not spend more than 60-90
@@ -16,23 +16,13 @@ too long.
 To track your progress, please commit your work to git after completing
 each task.
 
-The terraform inside the terraform folder has already been applied. You can make
-your changes using your AWS access keys and running the following inside the
-terraform folder:
-
-    terraform init -backend-config 'key=<your username>/terraform.tfstate'
-    terraform plan -var 'candidate=<your username>'
-
-Replacing <your username> with the AWS username you were supplied.
-
 Task 1
 ------
 
-Get this Dockerfile running in the test AWS account behind a publicly accessible
-load balancer. This can be done either using EKS or ECS. You should update the
-existing terraform to deploy it. No resources should be created manually in the
-AWS console with the exception of access keys for the deploy user so that you
-can deploy your changes.
+Update the existing Terraform to enable the deployment of a Container built from
+this Dockerfile, running behind a publicy accessible load balancer.
+This can be done either using EKS or ECS. You should update the existing terraform 
+to deploy it. 
 
 *Completion Criteria* Can visit the load balancer URL and shows the output of
 the Docker container. The URL can use the hostname assigned by Amazon and does
@@ -63,17 +53,7 @@ balancer in Task 1 so visiting the load balancer actually runs FizzBuzz.
 Task 3
 ------
 
-To run the Docker container included with this test locally you can execute:
-
-    docker build -t devops-test .
-    docker run -d --name devops-test devops-test
-
-To logon the container and get a shell run:
-
-    docker exec -it devops-test /bin/bash
-
-Have a look at what is running on the container, and update this README with the
-following information:
+Build and run the container, and update this README with the following Information:
 
 *Container Information*
 
