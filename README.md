@@ -57,23 +57,35 @@ Build and run the container, and update this README with the following Informati
 
 *Container Information*
 
-    Container Operating System:
+1. Container Operating System:
+   - Amazon Linux
 
-    Container Package Management System:
+2. Container Package Management System:
+   - Yum
 
-    Linux Kernel Version:
+3. Linux Kernel Version:
+   - 4.9.184-linuxkit
 
-    Is PHP present on this system?:
+4. Is PHP present on this system?:
+   - No
 
-    Number of running processes:
+5. Number of running processes:
+   - 50 ...
 
-    What is the PID of of the primary 'httpd' process?:
+   docker stats will give this info...
 
-    Who has permission to read the file /etc/httpd/conf/httpd.conf?
+6. What is the PID of of the primary 'httpd' process?:
+   - 1
 
-    How many lines does the file /etc/httpd/httpd.conf consist of?
+7. Who has permission to read the file /etc/httpd/conf/httpd.conf?
+   - root has read and write, everyone else has read only
 
-    How many non-empty lines does the file /etc/httpd/httpd.conf consist of?
+8. How many lines does the file /etc/httpd/httpd.conf consist of?
+   - wrong location, first of all ....  But, the "/etc/httpd/conf/httpd.conf" has 362.
+
+9. How many non-empty lines does the file /etc/httpd/httpd.conf consist of?
+   - Again wrong location. So, "/etc/httpd/conf/httpd.conf" has 322.
+
 
 Please commit your answers to update this README.
 
